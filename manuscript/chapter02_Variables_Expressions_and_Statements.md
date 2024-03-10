@@ -121,7 +121,7 @@ SyntaxError: can't assign to literal
 
 A common way to represent variables on paper is to write the name with an arrow pointing to the variable’s value. This kind of figure is called a **state snapshot** because it shows what state each of the variables is in at a particular instant in time. (Think of it as the variable’s state of mind). This diagram shows the result of executing the assignment statements:
 
-![State Snapshot](Chapter-2/02-01-state.png) 
+![State Snapshot](resources/Chapter-2/02-01-state.png) 
 
 If you ask the interpreter to evaluate a variable, it will produce the value that is currently linked to the variable:
 
@@ -382,7 +382,7 @@ n = input("Please enter your name: ")
 
 A sample run of this script in Replit would populate your input question in the console to the left like this:
 
-![Input Prompt](Chapter-2/02-02-input-prompt.png)
+![Input Prompt](resources/Chapter-2/02-02-input-prompt.png)
 
 The user of the program can enter the name and press enter, and when this happens the text that has been entered is returned from the input function, and in this case assigned to the variable n.
 
@@ -396,7 +396,7 @@ One of the most useful features of programming languages is their ability to tak
 
 For example, we know how to get the user to enter some input, we know how to convert the string we get into a float, we know how to write a complex expression, and we know how to print values. Let’s put these together in a small four-step program that asks the user to input a value for the radius of a circle, and then computes the area of the circle from the formula
 
-![Area of a circle](Chapter-2/02-03-circle_area.png)
+![Area of a circle](resources/Chapter-2/02-03-circle_area.png)
 
 Firstly, we’ll do the four steps one at a time:
 
@@ -565,7 +565,7 @@ A name given to a variable. Variable names in Python consist of a sequence of le
 
 5. The formula for computing the final amount if one is earning compound interest is given on Wikipedia as
 
-    ![Compounded Interest Formula](Chapter-2/02-04-compoundInterest.png)
+    ![Compounded Interest Formula](resources/Chapter-2/02-04-compoundInterest.png)
 
     Write a Python program that assigns the principal amount of $10000 to variable `P`, assign to n the value `12`, and assign to `r` the interest rate of 8%. Then have the program prompt the user for the number of years `t` that the money will be compounded for. Calculate and print the final amount after `t` years.
 

@@ -22,13 +22,13 @@ Once you have an account, create a new repl and choose Python as the language fr
 
 The engine that translates and runs Python is called the **Python Interpreter**: There are two ways to use it: *immediate mode* and *script mode*. In immediate mode, you type Python expressions into the Python Interpreter window, and the interpreter immediately shows the result:
 
-![Running code in the interpreter (immediate mode)](Chapter-1/01-01-python-interpreter.png)
+![Running code in the interpreter (immediate mode)](resources/Chapter-1/01-01-python-interpreter.png)
 
 The `>>>` or `>` is called the **Python prompt**. The interpreter uses the prompt to indicate that it is ready for instructions. We typed `2 + 2`, and the interpreter evaluated our expression, and replied `4`, and on the next line it gave a new prompt, indicating that it is ready for more input.
 
 Working directly in the interpreter is convenient for testing short bits of code because you get immediate feedback. Think of it as scratch paper used to help you work out problems. Anything longer than a few lines should be put into a script. Scripts have the advantage that they can be saved to disk, printed, and so on. To create a script, you can enter the code into the middle pane, as shown below
 
-![Running code from a file (script mode)](Chapter-1/01-02-running-a-script.png)
+![Running code from a file (script mode)](resources/Chapter-1/01-02-running-a-script.png)
 
 ```python
 print("My first program adds two numbers")

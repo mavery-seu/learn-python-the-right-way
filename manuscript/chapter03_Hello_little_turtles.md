@@ -22,7 +22,7 @@ wn.mainloop()             # Wait for user to close window
 
 When we run this program, a new window pops up:
 
-![Turtle Window](Chapter-3/03-01-turtle-window.png)
+![Turtle Window](resources/Chapter-3/03-01-turtle-window.png)
 
 Here are a couple of things we’ll need to understand about this program.
 
@@ -114,7 +114,7 @@ wn.mainloop()
 
 Here is what happens when `alex` completes his rectangle, and `tess` completes her triangle:
 
-![Alex and Tess](Chapter-3/03-03-tess-alex.png)
+![Alex and Tess](resources/Chapter-3/03-03-tess-alex.png)
 
 Here are some *How to think like a computer scientist* observations:
 
@@ -174,7 +174,7 @@ Control flow until now has been strictly top to bottom, one statement at a time.
 
 Control flow is often easy to visualize and understand if we draw a flowchart. This shows the exact steps and logic of how the for statement executes.
 
-![For loop flowchart](Chapter-3/03-04-flowchart_for.png)
+![For loop flowchart](resources/Chapter-3/03-04-flowchart_for.png)
 
 ## 3.5. The loop simplifies our turtle program
 
@@ -257,7 +257,7 @@ Every turtle can have its own shape. The ones available “out of the box” are
 alex.shape("turtle")
 ```
 
-![Turtle Shape](Chapter-3/03-05-turtle-shape.png)
+![Turtle Shape](resources/Chapter-3/03-05-turtle-shape.png)
 
 We can speed up or slow down the turtle’s animation speed. (Animation controls how quickly the turtle turns and moves forward). Speed settings can be set between `1` (slowest) to `10` (fastest). But if we set the speed to `0`, it has a special meaning — turn off animation and go as fast as possible.
 
@@ -288,7 +288,7 @@ for i in range(30):
 wn.mainloop()
 ```
 
-![Turtle Spiral](Chapter-3/03-06-spiral.png)
+![Turtle Spiral](resources/Chapter-3/03-06-spiral.png)
 
 Be careful now! How many times was the body of the loop executed? How many turtle images do we see on the screen? All except one of the shapes we see on the screen here are footprints created by stamp. But the program still only has one turtle instance — can you figure out which one here is the real tess? (*Hint: if you’re not sure, write a new line of code after the for loop to change tess’ color, or to put her pen down and draw a line, or to change her shape, etc.*)
 
@@ -403,7 +403,7 @@ A condition that occurs which causes a loop to stop repeating its body. In the f
 
 11. Write a program to draw a shape like this:
 
-![Star](Chapter-3/03-07-star.png)
+![Star](resources/Chapter-3/03-07-star.png)
 
 Hints:
 
@@ -413,7 +413,7 @@ Hints:
 
 12. Write a program to draw a face of a clock that looks something like this:
 
-![Clock face](Chapter-3/04-08-turtle-clock.png)
+![Clock face](resources/Chapter-3/04-08-turtle-clock.png)
 
 13. Create a turtle, and assign it to a variable. When you ask for its type, what do you get?
 
