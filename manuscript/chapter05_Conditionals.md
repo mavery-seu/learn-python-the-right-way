@@ -150,7 +150,7 @@ The Boolean expression after the `if` statement is called the **condition**. If 
 
 **Flowchart of an `if` statement with an `else` clause**
 
-![Flowchart - if else](Chapter-5/05-01-flowchart_if_else.png)
+![Flowchart - if else](resources/Chapter-5/05-01-flowchart_if_else.png)
 
 The syntax for an if statement looks like this:
 
@@ -180,7 +180,7 @@ else:
 
 **Flowchart of an `if` statement with no `else` clause**
 
-![Flowchart - if only](Chapter-5/05-02-flowchart_if_only.png)
+![Flowchart - if only](resources/Chapter-5/05-02-flowchart_if_only.png)
 
 Another form of the `if` statement is one in which the `else` clause is omitted entirely. In this case, when the condition evaluates to `True`, the statements are executed, otherwise the flow of execution continues to the statement after the `if`.
 
@@ -215,7 +215,7 @@ else:
 
 **Flowchart of this chained conditional**
 
-![Flowchart - chained conditional](Chapter-5/05-03-flowchart_chained_conditional.png)
+![Flowchart - chained conditional](resources/Chapter-5/05-03-flowchart_chained_conditional.png)
 
 `elif` is an abbreviation of else if. Again, exactly one branch will be executed. There is no limit of the number of `elif` statements but only a single (and optional) final `else` statement is allowed and it must be the last branch in the statement:
 
@@ -238,7 +238,7 @@ One conditional can also be **nested** within another. (It is the same theme of 
 
 **Flowchart of this nested conditional**
 
-![Flowchart - nested conditional](Chapter-5/05-04-flowchart_nested_conditional.png)
+![Flowchart - nested conditional](resources/Chapter-5/05-04-flowchart_nested_conditional.png)
 
 ```python
 if x < y:
@@ -351,7 +351,7 @@ This version is probably the best of the three, because it very closely matches 
 
 As our programming skills develop we’ll find we have more than one way to solve any problem. So good programs are *designed*. We make choices that favour clarity, simplicity, and elegance. The job title *software architect* says a lot about what we do — we are *architects* who engineer our products to balance beauty, functionality, simplicity and clarity in our creations.
 
-***Tip***
+💡***Tip***
 
 *Once our program works, we should play around a bit trying to polish it up. Write good comments. Think about whether the code would be clearer with different variable names. Could we have done it more elegantly? Should we rather use a function? Can we simplify the conditionals?*
 
@@ -450,13 +450,13 @@ for v in xs:              # Assume xs and tess are ready
     draw_bar(tess, v)
 ```
 
-![Simple bar chart](Chapter-5/05-05-tess_bar_1.png)
+![Simple bar chart](resources/Chapter-5/05-05-tess_bar_1.png)
 
 Ok, not fantastically impressive, but it is a nice start! The important thing here was the mental chunking, or how we broke the problem into smaller pieces. Our chunk is to draw one bar, and we wrote a function to do that. Then, for the whole chart, we repeatedly called our function.
 
 Next, at the top of each bar, we’ll print the value of the data. We’ll do this in the body of `draw_bar`, by adding `t.write('  ' + str(height))` as the new third line of the body. We’ve put a little space in front of the number, and turned the number into a string. Without this extra space we tend to cramp our text awkwardly against the bar to the left. The result looks a lot better now:
 
-![Numbered bar chart](Chapter-5/05-06-tess_bar_2.png)
+![Numbered bar chart](resources/Chapter-5/05-06-tess_bar_2.png)
 
 And now we’ll add two lines to fill each bar. Our final program now looks like this:
 
@@ -494,7 +494,7 @@ wn.mainloop()
 
 It produces the following, which is more satisfying:
 
-![Filled bar chart](Chapter-5/05-07-tess_bar_3.png)
+![Filled bar chart](resources/Chapter-5/05-07-tess_bar_3.png)
 
 Mmm. Perhaps the bars should not be joined to each other at the bottom. We’ll need to pick up the pen while making the gap between the bars. We’ll leave that (and a few more tweaks) as exercises for you!
 

@@ -63,7 +63,7 @@ wn.mainloop()
 
 When we run this program, this new window pops up, and will remain on the screen until we close it.
 
-![tess mainloop](Chapter-3/03-02-turtle-green.png)
+![tess mainloop](resources/Chapter-3/03-02-turtle-green.png)
 
 
 **Extend this program …**

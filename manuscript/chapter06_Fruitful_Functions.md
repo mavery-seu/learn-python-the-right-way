@@ -97,7 +97,7 @@ To deal with increasingly complex programs, we are going to suggest a technique 
 
 As an example, suppose we want to find the distance between two points, given by the coordinates `(x1, y1)` and `(x2, y2)`. By the Pythagorean theorem, the distance is:
 
-![Distance formula](Chapter-6/06-01-distance_formula.png)
+![Distance formula](resources/Chapter-6/06-01-distance_formula.png)
 
 The first step is to consider what a `distance` function should look like in Python. In other words, what are the inputs (parameters) and what is the output (return value)?
 
