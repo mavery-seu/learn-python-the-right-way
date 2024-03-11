@@ -88,7 +88,7 @@ output {
 }
 </style>
 
-# Chapter 2: Variables, expressions and statements
+# Chapter 2: Variables, Expressions and Statements
 
 (Watch a video based on this chapter **PLACE_HOLDER**.)
 <br>
@@ -96,7 +96,7 @@ output {
 <hr>
 <br>
 
-## 2.1. Values and data types
+## 2.1. Values and Data Types
 
 A **value** is one of the fundamental things — like a letter or a number — that a program manipulates. The values we have seen so far are <mark>4</mark> (the result when we added <mark>2 + 2</mark>), and <mark>"Hello, World!"</mark>.
 <br><br>
@@ -278,7 +278,7 @@ A great deal of programming is about having the computer remember things, e.g. *
 <hr>
 <br>
 
-## 2.3. Variable names and keywords
+## 2.3. Variable Names and Keywords
 
 **Variable names** can be arbitrarily long. They can contain both letters and digits, but they have to begin with a letter or an underscore. Although it is legal to use uppercase letters, by convention we don’t. If you do, remember that case matters. <mark>Bruce</mark> and <mark>bruce</mark> are different variables.
 <br><br>
@@ -384,7 +384,7 @@ When you type a statement on the command line, Python executes it. Statements do
 <hr>
 <br>
 
-## 2.5. Evaluating expressions
+## 2.5. Evaluating Expressions
 
 An **expression** is a combination of values, variables, operators, and calls to functions. If you type an expression at the Python prompt, the interpreter **evaluates** it and displays the result:
 
@@ -415,7 +415,7 @@ The *evaluation* of an *expression* produces a value, which is why expressions c
  <output>3.14 </output>
 </div>
 
-## 2.6. Operators and operands
+## 2.6. Operators and Operands
 
 **Operators** are special tokens that represent computations like addition, multiplication and division. The values the operator uses are called **operands**.
 <br><br>
@@ -478,7 +478,7 @@ Oops! In Python 3, the division operator <mark>/</mark> always yields a floating
 
 Take care that you choose the correct flavor of the division operator. If you’re working with expressions where you need floating point values, use the division operator that does the division accurately.
 
-## 2.7. Type converter functions
+## 2.7. Type Converter Functions
 
 Here we’ll look at three more Python functions, <mark>int</mark>, <mark>float</mark> and <mark>str</mark>, which will (attempt to) convert their arguments into types <mark>int</mark>, <mark>float</mark> and <mark>str</mark> respectively. We call these **type converter** functions.
 <br><br>
@@ -541,7 +541,7 @@ The type converter <mark>str</mark> turns its argument into a string:
 <hr>
 <br>
 
-## 2.8. Order of operations
+## 2.8. Order of Operations
 
 When more than one operator appears in an expression, the order of evaluation depends on the **rules of precedence**. Python follows the same precedence rules for its mathematical operators that mathematics does. The acronym PEMDAS is a useful way to remember the order of operations:
 <br><br>
@@ -569,7 +569,7 @@ The immediate mode command prompt of Python is great for exploring and experimen
 <hr>
 <br>
 
-## 2.9. Operations on strings
+## 2.9. Operations on Strings
 
 In general, you cannot perform mathematical operations on strings, even if the strings look like numbers. The following are illegal (assuming that message has type string):
 
@@ -674,7 +674,7 @@ If you’re ever in doubt about whether to compose code or fragment it into smal
 <hr>
 <br>
 
-## 2.12. The modulus operator
+## 2.12. The Modulus Operator
 
 The modulus operator works on integers (and integer expressions) and gives the remainder when the first number is divided by the second. In Python, the modulus operator is a percent sign (<mark>%</mark>). The syntax is the same as for other operators. It has the same precedence as the multiplication operator.
 
