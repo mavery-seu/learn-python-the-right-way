@@ -1,14 +1,117 @@
-# Chapter 3: Hello, little turtles!
+<style>
+mark {
+    color: #7c609c;
+    font-weight: 600;
+    background-color: #efecf3;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+}
+
+span {
+    color:#2babb2;
+    font-weight: bold;
+}
+
+.python {
+    /* background-color: #f4f5f5; */
+    background-color: white;
+    border: 1px black solid;
+    color: black;
+    padding: 10px 15px;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 13px;
+    font-family: 'Courier New', monospace;
+}
+
+
+str {
+    color: #744aba;
+}
+
+lit {
+    color: #18880d;
+}
+
+vari {
+    color: #0380bf;
+}
+
+keyword {
+    color: #d60083;
+}
+
+func {
+    color: #079795;
+}
+
+comment {
+    color: #7d7d78;
+}
+
+error {
+    color: #ba131d;
+}
+
+tick {
+    background-color: #f4f5f5;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+output {
+    color: #6a6964;
+}
+
+.caution {
+    background-color: #fff7d3;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.tip {
+    background-color: #eafcd6;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.diagram {
+    padding: 10px 15px;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+</style>
+
+# Chapter 3: Hello, Little Turtles!
 
 There are many *modules* in Python that provide very powerful features that we can use in our own programs. Some of these can send email, or fetch web pages. The one we’ll look at in this chapter allows us to create turtles and get them to draw shapes and patterns.
 
 The turtles are fun, but the real purpose of the chapter is to teach ourselves a little more Python, and to develop our theme of *computational thinking*, or *thinking like a computer scientist*. Most of the Python covered here will be explored in more depth later.
 
-## 3.1. Our first turtle program
+## 3.1. Our First Turtle Program
 
-Let’s write a couple of lines of Python program to create a new turtle and start drawing a rectangle. (We’ll call the variable that refers to our first turtle `alex`, but we can choose another name if we follow the naming rules from the previous chapter).
+Let’s write a couple of lines of Python program to create a new turtle and start drawing a rectangle. (We’ll call the variable that refers to our first turtle <mark>alex</mark>, but we can choose another name if we follow the naming rules from the previous chapter).
 
-```python
+<div class="python">
+<keyword>import</keyword> turtle             <comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Allows us to use turtles</comment><br>
+wn = turtle.<func>Screen</func>()      <comment>&nbsp;&nbsp;# Creates a playground for turtles</comment><br>
+alex = turtle.<func>Turtle</func>()    <comment># Create a turtle, assign to alex</comment><br>
+<br>
+alex.<func>forward</func>(<lit>50</lit>)          <comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Tell alex to move forward by 50 units</comment><br>
+alex.<func>left</func>(<lit>90</lit>)             <comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Tell alex to turn by 90 degrees</comment><br>
+alex.<func>forward</func>(<lit>30</lit>)          <comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Complete the second side of a rectangle</comment><br>
+<br>
+wn.<func>mainloop</func>()             <comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Wait for user to close window</comment>
+</div>
+
+<!-- ```python
 import turtle             # Allows us to use turtles
 wn = turtle.Screen()      # Creates a playground for turtles
 alex = turtle.Turtle()    # Create a turtle, assign to alex
@@ -18,7 +121,7 @@ alex.left(90)             # Tell alex to turn by 90 degrees
 alex.forward(30)          # Complete the second side of a rectangle
 
 wn.mainloop()             # Wait for user to close window
-```
+``` -->
 
 When we run this program, a new window pops up:
 
@@ -26,25 +129,42 @@ When we run this program, a new window pops up:
 
 Here are a couple of things we’ll need to understand about this program.
 
-The first line tells Python to load a module named `turtle`. That module brings us two new types that we can use: the `Turtle` type, and the `Screen` type. The dot notation `turtle.Turtle` means “*The Turtle type that is defined within the turtle module*”. (Remember that Python is case sensitive, so the module name, with a lowercase `t`, is different from the type `Turtle`.)
+The first line tells Python to load a module named <mark>turtle</mark>. That module brings us two new types that we can use: the <mark>Turtle</mark> type, and the <mark>Screen</mark> type. The dot notation <mark>turtle.Turtle</mark> means “*The Turtle type that is defined within the turtle module*”. (Remember that Python is case sensitive, so the module name, with a lowercase <mark>t</mark>, is different from the type <mark>Turtle</mark>.)
 
-We then create and open what it calls a screen (we would prefer to call it a window), which we assign to variable `wn`. Every window contains a **canvas**, which is the area inside the window on which we can draw.
+We then create and open what it calls a screen (we would prefer to call it a window), which we assign to variable <mark>wn</mark>. Every window contains a **canvas**, which is the area inside the window on which we can draw.
 
-In line 3 we create a turtle. The variable `alex` is made to refer to this turtle.
+In line 3 we create a turtle. The variable <mark>alex</mark> is made to refer to this turtle.
 
 So these first three lines have set things up, we’re ready to get our turtle to draw on our canvas.
 
-In lines 5-7, we instruct the **object** `alex` to move, and to turn. We do this by **invoking**, or activating, `alex’s` **methods** — these are the instructions that all turtles know how to respond to.
+In lines 5-7, we instruct the **object** <mark>alex</mark> to move, and to turn. We do this by **invoking**, or activating, <mark>alex’s</mark> **methods** — these are the instructions that all turtles know how to respond to.
 
-The last line plays a part too: the `wn` variable refers to the window shown above. When we invoke its `mainloop` method, it enters a state where it waits for events (like keypresses, or mouse movement and clicks). The program will terminate when the user closes the window.
+The last line plays a part too: the <mark>wn</mark> variable refers to the window shown above. When we invoke its <mark>mainloop</mark> method, it enters a state where it waits for events (like keypresses, or mouse movement and clicks). The program will terminate when the user closes the window.
 
-An object can have various methods — things it can do — and it can also have **attributes** — (sometimes called properties). For example, each turtle has a *color* attribute. The method invocation `alex.color("red")` will make `alex` red, and drawing will be red too. (Note the word *color* is spelled the American way!)
+An object can have various methods — things it can do — and it can also have **attributes** — (sometimes called properties). For example, each turtle has a *color* attribute. The method invocation <mark>alex.color("red")</mark> will make <mark>alex</mark> red, and drawing will be red too. (Note the word *color* is spelled the American way!)
 
 The color of the turtle, the width of its pen, the position of the turtle within the window, which way it is facing, and so on are all part of its current **state**. Similarly, the window object has a background color, and some text in the title bar, and a size and position on the screen. These are all part of the state of the window object.
 
 Quite a number of methods exist that allow us to modify the turtle and the window objects. We’ll just show a couple. In this program we’ve only commented those lines that are different from the previous example (and we’ve used a different variable name for this turtle):
 
- ```python
+<div class="python">
+<keyword>import</keyword> turtle<br>
+wn = turtle.<func>Screen</func>()<br>
+wn.<func>bgcolor</func>(<str>"lightgreen"</str>)      <comment># Set the window background color</comment><br>
+wn.<func>title</func>(<str>"Hello, Tess!"</str>)      <comment># Set the window title</comment><br>
+<br>
+tess = turtle.<func>Turtle</func>()<br>
+tess.<func>color</func>(<str>"blue"</str>)            <comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Tell tess to change her color</comment><br>
+tess.<func>pensize</func>(<lit>3</lit>)               <comment>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Tell tess to set her pen width</comment><br>
+<br>
+tess.<func>forward</func>(<lit>50</lit>)<br>
+tess.<func>left</func>(<lit>120</lit>)<br>
+tess.<func>forward</func>(<lit>50</lit>)<br>
+<br>
+wn.<func>mainloop</func>()
+</div>
+
+ <!-- ```python
 import turtle
 wn = turtle.Screen()
 wn.bgcolor("lightgreen")      # Set the window background color
@@ -59,7 +179,7 @@ tess.left(120)
 tess.forward(50)
 
 wn.mainloop()
-```
+``` -->
 
 When we run this program, this new window pops up, and will remain on the screen until we close it.
 
@@ -72,11 +192,11 @@ When we run this program, this new window pops up, and will remain on the screen
 
 2. Do similar changes to allow the user, at runtime, to set tess’ color.
 
-3. Do the same for the width of `tess’` pen. *Hint: your dialog with the user will return a string, but tess’ `pensize` method expects its argument to be an int. So you’ll need to convert the string to an int before you pass it to `pensize`.*
+3. Do the same for the width of <mark>tess’</mark> pen. *Hint: your dialog with the user will return a string, but tess’ <mark>pensize</mark> method expects its argument to be an int. So you’ll need to convert the string to an int before you pass it to <mark>pensize</mark>.*
 
 ## 3.2. Instances — a herd of turtles
 
-Just like we can have many different integers in a program, we can have many turtles. Each of them is called an **instance**. Each instance has its own attributes and methods — so alex might draw with a thin black pen and be at some position, while `tess` might be going in her own direction with a fat pink pen.
+Just like we can have many different integers in a program, we can have many turtles. Each of them is called an **instance**. Each instance has its own attributes and methods — so alex might draw with a thin black pen and be at some position, while <mark>tess</mark> might be going in her own direction with a fat pink pen.
 
 ```python
 import turtle
@@ -112,7 +232,7 @@ alex.left(90)
 wn.mainloop()
 ```
 
-Here is what happens when `alex` completes his rectangle, and `tess` completes her triangle:
+Here is what happens when <mark>alex</mark> completes his rectangle, and <mark>tess</mark> completes her triangle:
 
 ![Alex and Tess](resources/Chapter-3/03-03-tess-alex.png)
 
@@ -155,14 +275,14 @@ Hi Thandi.  Please come to my party on Saturday!
 Hi Paris.  Please come to my party on Saturday!
 ```
 
-- The variable `f` in the for statement at line `1` is called the **loop variable**. We could have chosen any other variable name instead.
-Lines `2` and `3` are the **loop body**. The loop body is always indented. The indentation determines exactly what statements are “in the body of the loop”.
+- The variable <mark>f</mark> in the for statement at line <mark>1</mark> is called the **loop variable**. We could have chosen any other variable name instead.
+Lines <mark>2</mark> and <mark>3</mark> are the **loop body**. The loop body is always indented. The indentation determines exactly what statements are “in the body of the loop”.
 
-- On each *iteration* or *pass* of the loop, first a check is done to see if there are still more items to be processed. If there are none left (this is called the **terminating condition** of the loop), the loop has finished. Program execution continues at the next statement after the loop body, (e.g. in this case the next statement below the comment in line `4`).
+- On each *iteration* or *pass* of the loop, first a check is done to see if there are still more items to be processed. If there are none left (this is called the **terminating condition** of the loop), the loop has finished. Program execution continues at the next statement after the loop body, (e.g. in this case the next statement below the comment in line <mark>4</mark>).
 
-- If there are items still to be processed, the loop variable is updated to refer to the next item in the list. This means, in this case, that the loop body is executed here `7` times, and each time `f` will refer to a different friend.
+- If there are items still to be processed, the loop variable is updated to refer to the next item in the list. This means, in this case, that the loop body is executed here <mark>7</mark> times, and each time <mark>f</mark> will refer to a different friend.
 
-- At the end of each execution of the body of the loop, Python returns to the for statement, to see if there are more items to be handled, and to assign the next one to `f`.
+- At the end of each execution of the body of the loop, Python returns to the for statement, to see if there are more items to be handled, and to assign the next one to <mark>f</mark>.
 
 ## 3.4. Flow of Execution of the for loop
 
@@ -190,7 +310,7 @@ Some observations:
 
 - While “saving some lines of code” might be convenient, it is not the big deal here. What is much more important is that we’ve found a “repeating pattern” of statements, and reorganized our program to repeat the pattern. Finding the chunks and somehow getting our programs arranged around those chunks is a vital skill in computational thinking.
 
-- The values `[0,1,2,3]` were provided to make the loop body execute 4 times. We could have used any four values, but these are the conventional ones to use. In fact, they are so popular that Python gives us special built-in range objects:
+- The values <mark>[0,1,2,3]</mark> were provided to make the loop body execute 4 times. We could have used any four values, but these are the conventional ones to use. In fact, they are so popular that Python gives us special built-in range objects:
 
 ```python
 for i in range(4):
@@ -199,9 +319,9 @@ for x in range(10):
     # Sets x to each of ... [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] 
 ```
 
-- Computer scientists like to count from `0`!
+- Computer scientists like to count from <mark>0`!
 
-- `range` can deliver a sequence of values to the loop variable in the `for` loop. They start at `0`, and in these cases do not include the `4` or the `10`.
+- <mark>range</mark> can deliver a sequence of values to the loop variable in the <mark>for</mark> loop. They start at <mark>0</mark>, and in these cases do not include the <mark>4</mark> or the <mark>10</mark>.
 
 - Our little trick earlier to make sure that alex did the final turn to complete 360 degrees has paid off: if we had not done that, then we would not have been able to use a loop for the fourth side of the square. It would have become a “special case”, different from the other sides. When possible, we’d much prefer to make our code fit a general pattern, rather than have to create a special case.
 
@@ -213,7 +333,7 @@ for i in range(4):
     alex.left(90)
 ```
 
-By now you should be able to see how to change our previous program so that tess can also use a `for` loop to draw her equilateral triangle.
+By now you should be able to see how to change our previous program so that tess can also use a <mark>for</mark> loop to draw her equilateral triangle.
 
 But now, what would happen if we made this change?
 
@@ -224,7 +344,7 @@ for c in ["yellow", "red", "purple", "blue"]:
     alex.left(90)
 ```
 
-A variable can also be assigned a value that is a list. So lists can also be used in more general situations, not only in the `for` loop. The code above could be rewritten like this:
+A variable can also be assigned a value that is a list. So lists can also be used in more general situations, not only in the <mark>for</mark> loop. The code above could be rewritten like this:
 
 ```python
 # Assign a list to a variable
@@ -237,9 +357,9 @@ for c in clrs:
 
 ## 3.6. A few more turtle methods and tricks
 
-Turtle methods can use negative angles or distances. So `tess.forward(-100)` will move tess backwards, and `tess.left(-30)` turns her to the right. Additionally, because there are 360 degrees in a circle, turning 30 to the left will get tess facing in the same direction as turning 330 to the right! (The on-screen animation will differ, though — you will be able to tell if tess is turning clockwise or counter-clockwise!)
+Turtle methods can use negative angles or distances. So <mark>tess.forward(-100)</mark> will move tess backwards, and <mark>tess.left(-30)</mark> turns her to the right. Additionally, because there are 360 degrees in a circle, turning 30 to the left will get tess facing in the same direction as turning 330 to the right! (The on-screen animation will differ, though — you will be able to tell if tess is turning clockwise or counter-clockwise!)
 
-This suggests that we don’t need both a left and a right turn method — we could be minimalists, and just have one method. There is also a *backward* method. (If you are very nerdy, you might enjoy saying `alex.backward(-100)` to move `alex` forward!)
+This suggests that we don’t need both a left and a right turn method — we could be minimalists, and just have one method. There is also a *backward* method. (If you are very nerdy, you might enjoy saying <mark>alex.backward(-100)</mark> to move <mark>alex</mark> forward!)
 
 Part of thinking like a scientist is to understand more of the structure and rich relationships in our field. So revising a few basic facts about geometry and number lines, and spotting the relationships between left, right, backward, forward, negative and positive distances or angles values is a good start if we’re going to play with turtles.
 
@@ -251,7 +371,7 @@ alex.forward(100)     # This moves alex, but no line is drawn
 alex.pendown()
 ```
 
-Every turtle can have its own shape. The ones available “out of the box” are `arrow`, `blank`, `circle`, `classic`, `square`, `triangle`, `turtle`.
+Every turtle can have its own shape. The ones available “out of the box” are <mark>arrow</mark>, <mark>blank</mark>, <mark>circle</mark>, <mark>classic</mark>, <mark>square</mark>, <mark>triangle</mark>, <mark>turtle</mark>.
 
 ```python
 alex.shape("turtle")
@@ -259,7 +379,7 @@ alex.shape("turtle")
 
 ![Turtle Shape](resources/Chapter-3/03-05-turtle-shape.png)
 
-We can speed up or slow down the turtle’s animation speed. (Animation controls how quickly the turtle turns and moves forward). Speed settings can be set between `1` (slowest) to `10` (fastest). But if we set the speed to `0`, it has a special meaning — turn off animation and go as fast as possible.
+We can speed up or slow down the turtle’s animation speed. (Animation controls how quickly the turtle turns and moves forward). Speed settings can be set between <mark>1</mark> (slowest) to <mark>10</mark> (fastest). But if we set the speed to <mark>0</mark>, it has a special meaning — turn off animation and go as fast as possible.
 
 ```python
 alex.speed(10)
@@ -312,11 +432,11 @@ A statement in Python for convenient repetition of statements in the body of the
 
 **loop body**
 
-Any number of statements nested inside a loop. The nesting is indicated by the fact that the statements are indented under the `for` loop statement.
+Any number of statements nested inside a loop. The nesting is indicated by the fact that the statements are indented under the <mark>for</mark> loop statement.
 
 **loop variable**
 
-A variable used as part of a `for` loop. It is assigned a different value on each iteration of the loop.
+A variable used as part of a <mark>for</mark> loop. It is assigned a different value on each iteration of the loop.
 
 **instance**
 
@@ -324,11 +444,11 @@ An object of a certain type, or class. tess and alex are different instances of 
 
 **method**
 
-A function that is attached to an object. Invoking or activating the method causes the object to respond in some way, e.g. forward is the method when we say `tess.forward(100)`.
+A function that is attached to an object. Invoking or activating the method causes the object to respond in some way, e.g. forward is the method when we say <mark>tess.forward(100)</mark>.
 
 **invoke**
 
-An object has methods. We use the verb invoke to mean activate the method. Invoking a method is done by putting parentheses after the method name, with some possible arguments. So `tess.forward()` is an invocation of the forward method.
+An object has methods. We use the verb invoke to mean activate the method. Invoking a method is done by putting parentheses after the method name, with some possible arguments. So <mark>tess.forward()</mark> is an invocation of the forward method.
 
 **module**
 
@@ -348,11 +468,11 @@ A condition that occurs which causes a loop to stop repeating its body. In the f
 
 ## 3.8. Exercises
 
-1. Write a program that prints `We like Python's turtles!` 1000 times.
+1. Write a program that prints <mark>We like Python's turtles!</mark> 1000 times.
 
 2. Give three attributes of your cellphone object. Give three methods of your cellphone.
 
-3. Write a program that uses a `for` loop to print
+3. Write a program that uses a <mark>for</mark> loop to print
 
     ```
     One of the months of the year is January
@@ -360,28 +480,28 @@ A condition that occurs which causes a loop to stop repeating its body. In the f
     ...
     ```
 
-4. Suppose our turtle tess is at heading `0` — facing east. We execute the statement `tess.left(3645)`. What does tess do, and what is her final heading?
+4. Suppose our turtle tess is at heading <mark>0</mark> — facing east. We execute the statement <mark>tess.left(3645)</mark>. What does tess do, and what is her final heading?
 
-5. Assume you have the assignment `xs = [12, 10, 32, 3, 66, 17, 42, 99, 20]`
+5. Assume you have the assignment <mark>xs = [12, 10, 32, 3, 66, 17, 42, 99, 20]`
 
     a. Write a loop that prints each of the numbers on a new line.
 
     b. Write a loop that prints each number and its square on a new line.
 
-    c. Write a loop that adds all the numbers from the list into a variable called `total`. You should set the `total` variable to have the value `0` before you start adding them up, and print the value in total after the loop has completed.
+    c. Write a loop that adds all the numbers from the list into a variable called <mark>total</mark>. You should set the <mark>total</mark> variable to have the value <mark>0</mark> before you start adding them up, and print the value in total after the loop has completed.
 
     d. Print the product of all the numbers in the list. (product means all multiplied together)
 
-6. Use `for` loops to make a turtle draw these regular polygons (regular means all sides the same lengths, all angles the same):
+6. Use <mark>for</mark> loops to make a turtle draw these regular polygons (regular means all sides the same lengths, all angles the same):
 
     - An equilateral triangle
     - A square
     - A hexagon (six sides)
     - An octagon (eight sides)
 
-7. A drunk pirate makes a random turn and then takes `100` steps forward, makes another random turn, takes another `100` steps, turns another random amount, etc. A social science student records the angle of each turn before the next 100 steps are taken. Her experimental data is `[160, -43, 270, -97, -43, 200, -940, 17, -86]`. (Positive angles are counter-clockwise.) Use a turtle to draw the path taken by our drunk friend.
+7. A drunk pirate makes a random turn and then takes <mark>100</mark> steps forward, makes another random turn, takes another <mark>100</mark> steps, turns another random amount, etc. A social science student records the angle of each turn before the next 100 steps are taken. Her experimental data is <mark>[160, -43, 270, -97, -43, 200, -940, 17, -86]</mark>. (Positive angles are counter-clockwise.) Use a turtle to draw the path taken by our drunk friend.
 
-8. Enhance your program above to also tell us what the drunk pirate’s heading is after he has finished stumbling around. (Assume he begins at heading `0`).
+8. Enhance your program above to also tell us what the drunk pirate’s heading is after he has finished stumbling around. (Assume he begins at heading <mark>0</mark>).
 
 9. If you were going to draw a regular polygon with 18 sides, what angle would you need to turn the turtle at each corner?
 
@@ -409,7 +529,7 @@ Hints:
 
 -  Try this on a piece of paper, moving and turning your cellphone as if it was a turtle. Watch how many complete rotations your cellphone makes before you complete the star. Since each full rotation is 360 degrees, you can figure out the total number of degrees that your phone was rotated through. If you divide that by 5, because there are five points to the star, you’ll know how many degrees to turn the turtle at each point.
 
-- You can hide a turtle behind its invisibility cloak if you don’t want it shown. It will still draw its lines if its pen is down. The method is invoked as `tess.hideturtle()`. To make the turtle visible again, use `tess.showturtle()`.
+- You can hide a turtle behind its invisibility cloak if you don’t want it shown. It will still draw its lines if its pen is down. The method is invoked as <mark>tess.hideturtle()</mark>. To make the turtle visible again, use <mark>tess.showturtle()</mark>.
 
 12. Write a program to draw a face of a clock that looks something like this:
 
