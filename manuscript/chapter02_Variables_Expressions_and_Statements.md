@@ -23,7 +23,7 @@ span {
     padding: 10px 15px;
     font-weight: 700;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 
@@ -65,14 +65,18 @@ tick {
     margin-right: 5px;
 }
 
+output {
+    color: #6a6964;
+}
+
 .caution {
-    background-color: #fcffa4;
+    background-color: #fff7d3;
     padding: 10px 15px;
     border-radius: 5px;
 }
 
 .tip {
-    background-color: #b6ffa4;
+    background-color: #eafcd6;
     padding: 10px 15px;
     border-radius: 5px;
 }
@@ -102,9 +106,9 @@ If you are not sure what class a value falls into, Python has a function called 
 <br>
 <div class="python">
 <tick>&gt;&gt;&gt;</tick><func>type</func>(<str>"Hello, World!"</str>)<br>
-<keyword>&lt;class 'str'&gt;<br><br></keyword>
+ <output>&lt;class 'str'&gt;<br><br> </output>
 <tick>&gt;&gt;&gt;</tick><func>type</func>(<lit>17</lit>)<br>
-<keyword>&lt;class 'int'&gt;</keyword>
+ <output>&lt;class 'int'&gt; </output>
 </div>
 <br>
 
@@ -112,17 +116,17 @@ Not surprisingly, strings belong to the class **str** and integers belong to the
 
 <div class="python">
 <tick>&gt;&gt;&gt;</tick><func>type</func>(<lit>3.2</lit>)<br>
-<keyword>&lt;class 'float'&gt;</keyword>
+ <output>&lt;class 'float'&gt; </output>
 </div>
 
 What about values like <mark>"17"</mark> and <mark>"3.2"</mark>? They look like numbers, but they are in quotation marks like strings.
 
 <div class="python">
 <tick>&gt;&gt;&gt;</tick><func>type</func>(<str>"17"</str>)<br>
-<keyword>&lt;class 'str'&gt;</keyword>
+ <output>&lt;class 'str'&gt; </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick><func>type</func>(<str>"3.2"</str>)<br>
-<keyword>&lt;class 'str'&gt;</keyword>
+ <output>&lt;class 'str'&gt; </output>
 </div>
 
 They’re strings!
@@ -131,16 +135,16 @@ Strings in Python can be enclosed in either single quotes (') or double quotes (
 
 <div class="python">
 <tick>&gt;&gt;&gt;</tick><func>type</func>(<str>'This is a string.'</str>)<br>
-<keyword>&lt;class 'str'&gt;</keyword>
+ <output>&lt;class 'str'&gt; </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick><func>type</func>(<str>"And so is this."</str>)<br>
-<keyword>&lt;class 'str'&gt;</keyword>
+ <output>&lt;class 'str'&gt; </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick><func>type</func>(<str>"""and this."""</str>)<br>
-<keyword>&lt;class 'str'&gt;</keyword>
+ <output>&lt;class 'str'&gt; </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick><func>type</func>(<str>'''and even this...'''</str>)<br>
-<keyword>&lt;class 'str'&gt;</keyword>
+ <output>&lt;class 'str'&gt; </output>
 </div>
 
 Double quoted strings can contain single quotes inside them, as in <mark>"Bruce's beard"</mark>, and single quoted strings can have double quotes inside them, as in <mark>'The knights who say "Ni!"'</mark>.
@@ -149,7 +153,7 @@ Strings enclosed with three occurrences of either quote symbol are called triple
 
 <div class="python">
 <tick>&gt;&gt;&gt;</tick><func>print</func>(<str>'''"Oh no", she exclaimed, "Ben's bike is broken!"'''</str>)<br>
-<keyword>"Oh no", she exclaimed, "Ben's bike is broken!"</keyword>
+ <output>"Oh no", she exclaimed, "Ben's bike is broken!" </output>
 </div>
 
 Triple quoted strings can even span multiple lines:
@@ -161,19 +165,19 @@ Triple quoted strings can even span multiple lines:
 <br><br>
 <tick>&gt;&gt;&gt;</tick><func>print</func>(message)
 <br>
-<keyword>This message will<br>
+ <output>This message will<br>
 span several<br>
-lines.</keyword>
+lines. </output>
 </div>
 
 Python doesn’t care whether you use single or double quotes or the three-of-a-kind quotes to surround your strings: once it has parsed the text of your program or command, the way it stores the value is identical in all cases, and the surrounding quotes are not part of the value. But when the interpreter wants to display a string, it has to decide which quotes to use to make it look like a string.
 
 <div class="python">
 <tick>&gt;&gt;&gt;</tick><str>'This is a string.'</str><br>
-<keyword>'This is a string.'</keyword>
+ <output>'This is a string.' </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick><str>"""And so is this."""</str><br>
-<keyword>'And so is this.'</keyword>
+ <output>'And so is this.' </output>
 </div>
 
 So the Python language designers usually chose to surround their strings by single quotes. What do you think would happen if the string already contained single quotes?
@@ -182,10 +186,10 @@ When you type a large integer, you might be tempted to use commas between groups
 
 <div class="python">
 <tick>&gt;&gt;&gt;</tick><lit>42000</lit><br>
-<keyword>42000</keyword>
+ <output>42000 </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick><lit>42,000</lit><br>
-<keyword>(42, 0)<keyword>
+ <output>(42, 0) <output>
 </div>
 
 Well, that’s not what we expected at all! Because of the comma, Python chose to treat this as a pair of values. We’ll come back to learn about pairs later. But, for the moment, remember not to put commas or spaces in your integers, no matter how big they are. Also revisit what we said in the previous chapter: formal languages are strict, the notation is concise, and even the smallest change might mean something quite different from what you intended.
@@ -214,7 +218,7 @@ The assignment token, <mark>=</mark>, should not be confused with *equals*, whic
 <br>
 <div class="python">
 <tick>&gt;&gt;&gt;</tick><lit>17</lit> = num<br>
-<error>File "main.py", line 1
+<error>File " &lt;stdin&gt;", line 1
 SyntaxError: can't assign to literal
 </div></error>
 <br>
@@ -238,13 +242,13 @@ If you ask the interpreter to evaluate a variable, it will produce the value tha
 
 <div class="python">
 <tick>&gt;&gt;&gt;</tick>message<br>
-<keyword>"What's up, Doc? 🥕🐇"</keyword>
+ <output>"What's up, Doc? 🥕🐇" </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> n<br>
-<keyword>17</keyword>
+ <output>17 </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> pi<br>
-<keyword>3.14159</keyword>
+ <output>3.14159 </output>
 </div>
 
 We use variables in a program to “remember” things, perhaps the current score at the football game. But variables are *variable*. This means they can change over time, just like the scoreboard at a football game. You can assign a value to a variable, and later assign a different value to the same variable. (*This is different from math. In math, if you give <mark>x</mark> the value <mark>3</mark>, it cannot change to link to a different value half-way through your calculations!*)
@@ -253,17 +257,17 @@ We use variables in a program to “remember” things, perhaps the current scor
 <tick>&gt;&gt;&gt;</tick> day = <str>"Thursday"</str>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> day<br>
-<keyword>'Thursday'</keyword>
+ <output>'Thursday' </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> day = <str>"Friday"</str>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> day<br>
-<keyword>'Friday'</keyword>
+ <output>'Friday' </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> day = <lit>21</lit>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> day<br>
-<keyword>21</keyword>
+ <output>21 </output>
 </div>
 
 You’ll notice we changed the value of <mark>day</mark> three times, and on the third assignment we even made it refer to a value that was of a different type.
@@ -302,7 +306,7 @@ It turns out that <mark>class</mark> is one of the Python **keywords**. Keywords
 <br><br>
 Python has thirty-something keywords (and every now and again improvements to Python introduce or eliminate one or two):
 <br><br>
-<keyword>
+ <output>
     <table>
         <tr>
             <td>and</td>
@@ -350,16 +354,9 @@ Python has thirty-something keywords (and every now and again improvements to Py
             <td>False</td>
             <td>None</td>
         <tr>
-    <table>
-</keyword>
-| and |	as | assert | break | class | continue |
-| --- | --- | --- | --- | --- | --- |
-| def |	del | elif | else | except |exec|
-| finally | for | from | global | if | import |
-| in | is | lambda | nonlocal | not | or |
-| pass | raise | return | try | while | with |
-| yield |	True |	False |	None |
-<br><br>
+    </table>
+ </output>
+<br>
 You might want to keep this list handy. If the interpreter complains about one of your variable names and you don’t know why, see if it is on this list.
 <br><br>
 Programmers generally choose names for their variables that are meaningful to the human readers of the program — they help the programmer document, or remember, what the variable is used for.
@@ -393,10 +390,10 @@ An **expression** is a combination of values, variables, operators, and calls to
 
 <div class="python">
 <tick>&gt;&gt;&gt;</tick> <lit>1</lit> + <lit>1</lit><br>
-<keyword>2</keyword>
+ <output>2 </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> <func>len</func>(<str>"hello"</str>)<br>
-<keyword>5</keyword>
+ <output>5 </output>
 </div>
 
 In this example <mark>len</mark> is a built-in Python function that returns the number of characters in a <mark>string</mark>. We’ve previously seen the <mark>print</mark> and the <mark>type</mark> functions, so this is our third example of a function!
@@ -405,17 +402,17 @@ The *evaluation* of an *expression* produces a value, which is why expressions c
 
 <div class="python">
 <tick>&gt;&gt;&gt;</tick> <lit>17</lit><br>
-<keyword>17</keyword>
+ <output>17 </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> y = <lit>3.14</lit>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> x = <func>len</func>(<str>"hello"</str>)
 <br><br>
 <tick>&gt;&gt;&gt;</tick> x<br>
-<keyword>5</keyword>
+ <output>5 </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> y<br>
-<keyword>3.14</keyword>
+ <output>3.14 </output>
 </div>
 
 ## 2.6. Operators and operands
@@ -437,10 +434,10 @@ The tokens <mark>+</mark>, <mark>-</mark>, and <mark>*</mark>, and the use of pa
 
 <div class="python">
 <tick>&gt;&gt;&gt;</tick> <lit>2</lit> ** <lit>3</lit><br>
-<keyword>8</keyword>
+ <output>8 </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> <lit>3</lit> ** <lit>2</lit><br>
-<keyword>9</keyword>
+ <output>9 </output>
 </div>
 
 When a variable name appears in the place of an operand, it is replaced with its value before the operation is performed.
@@ -455,24 +452,24 @@ Example: so let us convert 645 minutes into hours:
 <tick>&gt;&gt;&gt;</tick> hours = minutes / <lit>60</lit>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> hours<br>
-<keyword>10.75</keyword>
+ <output>10.75 </output>
 </div>
 
 Oops! In Python 3, the division operator <mark>/</mark> always yields a floating point result. What we might have wanted to know was how many whole hours there are, and how many minutes remain. Python gives us two different flavors of the division operator. The second, called **floor division** uses the token <mark>//</mark>. Its result is always a whole number — and if it has to adjust the number it always moves it to the left on the number line. So <mark>6 // 4</mark> yields <mark>1</mark>, but <mark>-6 // 4</mark> might surprise you!
 
 <div class="python">
 <tick>&gt;&gt;&gt;</tick> <lit>7</lit> / <lit>4</lit><br>
-<keyword>1.75</keyword>
+ <output>1.75 </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> <lit>7</lit> // <lit>4</lit><br>
-<keyword>1</keyword>
+ <output>1 </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> minutes = <lit>645</lit>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> hours = minutes // <lit>60</lit>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> hours<br>
-<keyword>10
+ <output>10
 </div>
 <br>
 <br>
@@ -489,25 +486,25 @@ The int function can take a floating point number or a string, and turn it into 
 
 <div class="python">
 <tick>&gt;&gt;&gt;</tick> <func>int</func>(<lit>3.14</lit>)<br>
-<keyword>3</keyword>
+ <output>3 </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> <func>int</func>(<lit>3.9999</lit>)             <comment># This doesn't round to the closest int!</comment><br>
-<keyword>3</keyword>
+ <output>3 </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> <func>int</func>(<lit>3.0</lit>)<br>
-<keyword>3</keyword>
+ <output>3 </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> <func>int</func>(<lit>-3.999</lit>)             <comment># Note that the result is closer to zero<br></comment>
-<keyword>-3</keyword>
+ <output>-3 </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> <func>int</func>(minutes / <lit>60</lit>)<br>
-<keyword>10</keyword>
+ <output>10 </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> <func>int</func>(<str>"2345"</str>)             <comment># Parse a string to produce an int</comment><br>
-<keyword>2345</keyword>
+ <output>2345 </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> <func>int</func>(<lit>17</lit>)                 <comment># It even works if arg is already an int<br></comment>
-<keyword>17</keyword>
+ <output>17 </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> <func>int</func>(<str>"23 bottles"</str>)
 </div>
@@ -516,7 +513,7 @@ This last case doesn’t look like a number — what do we expect?
 
 <div class="python">
 <error>Traceback (most recent call last):
-File "main.py", line 1, in <module>
+File " &lt;stdin&gt;", line 1, in <module>
 ValueError: invalid literal for int() with base 10: '23 bottles'</error>
 </div>
 
@@ -524,20 +521,20 @@ The type converter <mark>float</mark> can turn an integer, a float, or a syntact
 
 <div class="python">
 <tick>&gt;&gt;&gt;</tick> <func>float</func>(<lit>17</lit>)<br>
-<keyword>17.0</keyword>
+ <output>17.0 </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> <func>float</func>(<str>"123.45"</str>)<br>
-<keyword>123.45<keyword>
+ <output>123.45 <output>
 </div>
 
 The type converter <mark>str</mark> turns its argument into a string:
 
 <div class="python">
 <tick>&gt;&gt;&gt;</tick> <func>str</func>(<lit>17</lit>)<br>
-<keyword>'17'</keyword>
+ <output>'17' </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> <func>str</func>(<lit>123.45</lit>)<br>
-<keyword>'123.45'</keyword>
+ <output>'123.45' </output>
 </div>
 <br>
 <br>
@@ -560,10 +557,10 @@ Due to some historical quirk, an exception to the left-to-right left-associative
 
 <div class="python">
 <tick>&gt;&gt;&gt;</tick> <lit>2</lit> ** <lit>3</lit> ** <lit>2</lit>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment># The right-most ** operator gets done first!</comment><br>
-<keyword>512</keyword>
+ <output>512 </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> (<lit>2</lit> ** <lit>3</lit>) ** <lit>2</lit>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment># Use parentheses to force the order you want!</comment><br>
-<keyword>64</keyword>
+ <output>64 </output>
 </div>
 
 The immediate mode command prompt of Python is great for exploring and experimenting with expressions like this.
@@ -577,13 +574,25 @@ The immediate mode command prompt of Python is great for exploring and experimen
 In general, you cannot perform mathematical operations on strings, even if the strings look like numbers. The following are illegal (assuming that message has type string):
 
 <div class="python">
-<tick>&gt;&gt;&gt;</tick> message - <lit>1</lit>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment># 🚨 Error</comment>
+<tick>&gt;&gt;&gt;</tick> message - <lit>1</lit><br>
+<error>Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in <module>
+TypeError: unsupported operand type(s) for -: 'str' and 'int'</error>
 <br><br>
-<tick>&gt;&gt;&gt;</tick> <str>"Hello"</str> / <lit>123</lit> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment># 🚨 Error</comment>
+<tick>&gt;&gt;&gt;</tick> <str>"Hello"</str> / <lit>123</lit><br>
+<error>Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in <module>
+TypeError: unsupported operand type(s) for /: 'str' and 'int'</error>
 <br><br>
-<tick>&gt;&gt;&gt;</tick> <var>message * <str>"Hello"</str>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment># 🚨 Error</comment>
+<tick>&gt;&gt;&gt;</tick> <var>message * <str>"Hello"</str><br>
+<error>Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can't multiply sequence by non-int of type 'str'</error>
 <br><br>
-<tick>&gt;&gt;&gt;</tick> <str>"15"</str> + <lit>2</lit>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment># 🚨 Error</comment>
+<tick>&gt;&gt;&gt;</tick> <str>"15"</str> + <lit>2</lit><br>
+<error>Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can only concatenate str (not "int") to str</error>
 </div>
 
 Interestingly, the <mark>+</mark> operator does work with strings, but for strings, the <mark>+</mark> operator represents **concatenation**, not addition. Concatenation means joining the two operands by linking them end-to-end. For example:
@@ -673,12 +682,12 @@ The modulus operator works on integers (and integer expressions) and gives the r
 <tick>&gt;&gt;&gt;</tick> q = <lit>7</lit> // <lit>3</lit>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<comment># This is integer division operator</comment>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> <func>print</func>(q)<br>
-<keyword>2</keyword>
+ <output>2 </output>
 <br><br>
 <tick>&gt;&gt;&gt;</tick> r  = <lit>7</lit> % <lit>3</lit>
 <br><br>
 <tick>&gt;&gt;&gt;</tick>print(r)
-<keyword>1</keyword>
+ <output>1 </output>
 </div>
 
 So <mark>7</mark> divided by <mark>3</mark> is <mark>2</mark> with a remainder of <mark>1</mark>.
